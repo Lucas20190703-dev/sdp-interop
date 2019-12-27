@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "sdp-transform": "2.3.0"
+  },
+  "description": "A simple SDP interoperability layer for Unified Plan/Plan B",
+  "devDependencies": {
+    "coveralls": "^2.11.1",
+    "jscoverage": "^0.5.5",
+    "jshint": "2.8.0",
+    "precommit-hook": "^3.0.0",
+    "qunit-cli": "^0.2.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+   "keywords": [
+    "sdp",
+    "webrtc",
+    "interoperability",
+    "polyfill"
+  ],
+  "license": "Apache-2.0",
+  "main": "./lib/",
+  "name": "@qhsense/sdp-interop",
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "coverage": "jscoverage lib && SDP_TRANSFORM_COV=1 nodeunit --reporter=lcov test",
+    "coveralls": "npm run coverage | coveralls",
+    "lint": "jshint .",
+    "test": "node $NODE_DEBUG_OPTION test/sdp_interop.js",
+    "validate": "npm ls"
+  },
+  "stability": "unstable",
+  "version": "0.1.14"
+}
